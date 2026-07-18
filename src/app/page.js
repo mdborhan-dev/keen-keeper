@@ -1,8 +1,9 @@
+import HomeData from "@/components/HomeData";
 import { IoMdAdd } from "react-icons/io";
 
 export default function Home() {
   return (
-    <div className="mt-5 sm:mt-10 h-[80vh]">
+    <div className="mt-5 sm:mt-10 min-h-[80vh] max-w-277.5 mx-auto">
       <div className="text-center space-y-3 sm:space-y-4 w-11/12 mx-auto">
         <h1 className="text-3xl sm:text-5xl font-bold">
           Friends to keep close in your life
@@ -14,6 +15,9 @@ export default function Home() {
         <button className="btn btn-primary">
           <IoMdAdd /> Add Friend
         </button>
+      </div>
+      <div>
+        <HomeData />
       </div>
     </div>
   );
