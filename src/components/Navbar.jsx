@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className="bg-white shadow-sm py-4">
       <div className="flex items-center justify-between w-11/12 mx-auto">
         <Link href="/">
-          <h1 className="text-xl sm:text-xl text-[#244D3F]">
+          <h1 className="text-xl sm:text-5xl text-[#244D3F]">
             <span className="font-bold">Keen</span>
             <span className="">Keeper</span>
           </h1>
