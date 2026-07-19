@@ -1,5 +1,6 @@
 import QuickCheckIn from "@/components/QCheckInButtons/QuickCheckIn";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { FiArchive } from "react-icons/fi";
 import { HiBellSnooze } from "react-icons/hi2";
@@ -11,6 +12,9 @@ const FriendDetails = async ({ params }) => {
   );
   const data = await res.json();
   const friend = data.find((friend) => friend.id === Number(friendId));
+  if (!friend) {
+    notFound()
+  }
   return (
     <div className="min-h-[70vh] py-6 md:py-20 sm:py-9 sm:grid flex flex-col sm:grid-cols-3 md:grid-cols-9 md:grid-rows-7 gap-4 max-w-277.5 mx-auto max-sm:mx-4">
       {/* photo card*/}
