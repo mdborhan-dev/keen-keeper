@@ -36,7 +36,7 @@ const Timeline = () => {
     );
   });
   return (
-    <div className="min-h-[70vh] my-10 space-y-5 max-w-277.5 mx-auto">
+    <div className="min-h-[70vh] my-10 space-y-5 max-w-277.5 mx-auto max-sm:mx-4">
       <div className="space-y-3">
         <h2 className="text-5xl font-bold">Timeline</h2>
         <div className="flex justify-between items-center gap-2.5">

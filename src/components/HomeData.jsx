@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import InteractionData from "./homeInteractionData/InteractionData";
+import { cacheLife } from "next/cache";
 
 const HomeData = async () => {
+  'use cache'
+  cacheLife('hours')
   const res = await fetch(
     "https://keen-keeper-swart-five.vercel.app/friends.json",
   );
