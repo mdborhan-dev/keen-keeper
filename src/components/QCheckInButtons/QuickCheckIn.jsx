@@ -25,7 +25,7 @@ const QuickCheckIn = ({ friend }) => {
       <button
         onClick={() => {
           logActivity("call");
-          toast.success(`Succesfully called ${friend.name}`, {
+          toast.success(`Successfully called ${friend.name}`, {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -39,13 +39,13 @@ const QuickCheckIn = ({ friend }) => {
         }}
         className="btn w-full h-full rounded-2xl py-6 flex flex-col gap-2"
       >
-        <BiPhoneCall className="text-5xl" />{" "}
-        <span className="text-2xl">Call</span>
+        <BiPhoneCall className="text-4xl" />{" "}
+        <span className="text-xl">Call</span>
       </button>
       <button
         onClick={() => {
           logActivity("text");
-          toast.success(`Succesfully texted ${friend.name}`, {
+          toast.success(`Successfully texted ${friend.name}`, {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -60,13 +60,13 @@ const QuickCheckIn = ({ friend }) => {
 
         className="btn w-full h-full rounded-2xl py-6 flex flex-col gap-2"
       >
-        <MdOutlineMessage className="text-5xl" />{" "}
-        <span className="text-2xl">Text</span>
+        <MdOutlineMessage className="text-4xl" />{" "}
+        <span className="text-xl">Text</span>
       </button>
       <button
         onClick={() => {
           logActivity("video");
-          toast.success(`Succesfully called ${friend.name}`, {
+          toast.success(`Successfully called ${friend.name}`, {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -80,8 +80,8 @@ const QuickCheckIn = ({ friend }) => {
         }}
         className="btn w-full h-full rounded-2xl py-6 flex flex-col gap-2"
       >
-        <IoVideocamOutline className="text-5xl" />{" "}
-        <span className="text-2xl">Video</span>
+        <IoVideocamOutline className="text-4xl" />{" "}
+        <span className="text-xl">Video</span>
       </button>
     </div>
   );

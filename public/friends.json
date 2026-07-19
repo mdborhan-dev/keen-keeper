@@ -6,7 +6,7 @@
     "email": "john.doe@example.com",
     "days_since_contact": 12,
     "status": "overdue",
-    "tags": ["college", "close friend"],
+    "tags": ["college", "friend"],
     "bio": "Met in university. Love hiking together.",
     "goal": 7,
     "next_due_date": "2025-07-20"
@@ -55,7 +55,7 @@
     "days_since_contact": 9,
     "status": "almost due",
     "tags": ["work", "mentor"],
-    "bio": "Former manager who became a close friend and career mentor.",
+    "bio": "Former manager who became a friend and career mentor.",
     "goal": 10,
     "next_due_date": "2025-07-19"
   },
@@ -66,7 +66,7 @@
     "email": "priya.sharma@example.com",
     "days_since_contact": 1,
     "status": "on-track",
-    "tags": ["close friend", "travel"],
+    "tags": ["friend", "travel"],
     "bio": "Backpacked across Southeast Asia together in 2023.",
     "goal": 7,
     "next_due_date": "2025-07-24"
@@ -114,7 +114,7 @@
     "email": "fatima.begum@example.com",
     "days_since_contact": 3,
     "status": "on-track",
-    "tags": ["close friend", "hobby"],
+    "tags": ["friend", "hobby"],
     "bio": "We run a small book club together every month.",
     "goal": 14,
     "next_due_date": "2025-08-01"
