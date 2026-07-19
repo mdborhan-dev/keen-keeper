@@ -2,6 +2,7 @@ import React from "react";
 import instagramIcon from "../assets/instagram.png";
 import facebookIcon from "../assets/facebook.png";
 import twitterIcon from "../assets/twitter.png";
+import logoXl from "../assets/logo-xl.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,10 +10,11 @@ const Footer = () => {
   return (
     <div className="bg-primary pt-8 px-8 sm:pt-12 sm:px-12 md:px-20 md:pt-20  mx-auto w-full mt-10 pb-0 space-y-7">
       <div className="text-center flex flex-col items-center gap-4">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl text-white">
+        {/*         <h1 className="text-4xl sm:text-5xl md:text-7xl text-white">
           <span className="font-bold">Keen</span>
           <span className="">Keeper</span>
-        </h1>
+        </h1> */}
+        <Image src={logoXl} alt="KeenKeeper Logo" width={412} height={61} />
         <p className="leading-6 text-white text-sm sm:text-base px-2 sm:px-0">
           Your personal shelf of meaningful connections. Browse, tend, and
           nurture the relationships that matter most.

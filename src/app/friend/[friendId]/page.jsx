@@ -10,7 +10,7 @@ const FriendDetails = async ({ params }) => {
   const data = await res.json();
   const friend = data.find((friend) => friend.id === Number(friendId));
   return (
-    <div className="min-h-[70vh] py-20 grid grid-cols-9 grid-rows-7 gap-6">
+    <div className="min-h-[70vh] py-20 grid grid-cols-9 grid-rows-7 gap-6 max-w-277.5 mx-auto">
       {/* photo card*/}
       <div className="row-span-4 col-span-3 bg-white rounded-3xl p-6 flex flex-col justify-between items-center gap-4 text-center">
         <Image
@@ -33,22 +33,22 @@ const FriendDetails = async ({ params }) => {
             </div>
           ))}
         </div>
-        <h4 className="text-3xl italic text-[#1f2937]">{`"${friend.bio}"`}</h4>
+        <h4 className="text-2xl italic text-[#1f2937]">{`"${friend.bio}"`}</h4>
         <p className="text-xl text-[#1f2937]">Prefered: {friend.email}</p>
       </div>
       {/* days since contact*/}
       <div className="bg-white rounded-3xl col-span-2 row-span-2 p-6 flex flex-col gap-4 justify-center items-center">
-        <h2 className="text-5xl font-semibold">{friend.days_since_contact}</h2>
+        <h2 className="text-4xl font-semibold">{friend.days_since_contact}</h2>
         <p className="text-[#64748B] text-xl">Days Since Contact</p>
       </div>
       {/* Goal*/}
       <div className="bg-white rounded-3xl col-span-2 row-span-2 p-6 flex flex-col gap-4 justify-center items-center">
-        <h2 className="text-5xl font-semibold">{friend.goal}</h2>
+        <h2 className="text-4xl font-semibold">{friend.goal}</h2>
         <p className="text-[#64748B] text-xl">Goal (Days)</p>
       </div>
       {/* Next Due*/}
       <div className="bg-white rounded-3xl col-span-2 row-span-2 p-6 flex flex-col gap-4 justify-center items-center">
-        <h2 className="text-5xl font-semibold">{friend.next_due_date}</h2>
+        <h2 className="text-4xl font-semibold">{friend.next_due_date}</h2>
         <p className="text-[#64748B] text-xl">Next Due</p>
       </div>
       {/* relationship Goal*/}

@@ -1,9 +1,11 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChartLine } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiHomeLine } from "react-icons/ri";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -11,10 +13,7 @@ const Navbar = () => {
     <div className="bg-white shadow-sm py-4">
       <div className="flex items-center justify-between w-11/12 mx-auto">
         <Link href="/">
-          <h1 className="text-xl sm:text-5xl text-[#244D3F]">
-            <span className="font-bold">Keen</span>
-            <span className="">Keeper</span>
-          </h1>
+          <Image src={logo} alt="KeenKeeper Logo" width={141} height={31} />
         </Link>
         <div>
           <Link href="/">
