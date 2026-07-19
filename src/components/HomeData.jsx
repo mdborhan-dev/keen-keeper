@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HomeData = async () => {
-  const res = await fetch("http://localhost:3000/friends.json");
+  const res = await fetch(
+    "https://keen-keeper-swart-five.vercel.app/friends.json",
+  );
   const friends = await res.json();
   const onTrack = friends.filter((friend) => friend.status === "on-track");
   const neeedAttention = friends.filter(

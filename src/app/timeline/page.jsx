@@ -33,51 +33,59 @@ const Timeline = () => {
         </select>
       </div>
       <div className="flex flex-col justify-between items-center gap-4">
-        {filteredActivity.map((entry, ind) => (
-          <div
-            key={ind}
-            className="p-6 w-full flex justify-start items-center bg-white rounded-xl gap-3"
-          >
-            <Image
-              src={
-                entry.type === "call"
-                  ? callIcon
-                  : entry.type === "text"
-                    ? textIcon
-                    : entry.type === "video"
-                      ? videoIcon
-                      : ""
-              }
-              alt={entry.type}
-              width={60}
-              height={60}
-            />
-            <div className="flex flex-col justify-around gap-4">
-              <p className="text-ml text-primary font-semibold">
-                {entry.type === "call"
-                  ? "Call"
-                  : entry.type === "text"
-                    ? "Text"
-                    : entry.type === "video"
-                      ? "Video"
-                      : ""}{" "}
-                <span className="font-normal">with</span>{" "}
-                <span className="text-[#1F293785]">{entry.friendName}</span>
-              </p>
-              <p>
-                <small>
-                  {new Date(entry.timestamp).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                    hour: "numeric",
-                    minute: "2-digit",
-                  })}
-                </small>
-              </p>
-            </div>
+        {filteredActivity.length === 0 ? (
+          <div className="p-6 w-full flex justify-center items-center bg-white rounded-xl gap-3 text-center">
+            <h2 className="text-center font-bold text-4xl">
+              There's no data available to show
+            </h2>
           </div>
-        ))}
+        ) : (
+          filteredActivity.map((entry, ind) => (
+            <div
+              key={ind}
+              className="p-6 w-full flex justify-start items-center bg-white rounded-xl gap-3"
+            >
+              <Image
+                src={
+                  entry.type === "call"
+                    ? callIcon
+                    : entry.type === "text"
+                      ? textIcon
+                      : entry.type === "video"
+                        ? videoIcon
+                        : ""
+                }
+                alt={entry.type}
+                width={60}
+                height={60}
+              />
+              <div className="flex flex-col justify-around gap-4">
+                <p className="text-ml text-primary font-semibold">
+                  {entry.type === "call"
+                    ? "Call"
+                    : entry.type === "text"
+                      ? "Text"
+                      : entry.type === "video"
+                        ? "Video"
+                        : ""}{" "}
+                  <span className="font-normal">with</span>{" "}
+                  <span className="text-[#1F293785]">{entry.friendName}</span>
+                </p>
+                <p>
+                  <small>
+                    {new Date(entry.timestamp).toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                      hour: "numeric",
+                      minute: "2-digit",
+                    })}
+                  </small>
+                </p>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

@@ -6,7 +6,9 @@ import { HiBellSnooze } from "react-icons/hi2";
 
 const FriendDetails = async ({ params }) => {
   const { friendId } = await params;
-  const res = await fetch("http://localhost:3000/friends.json");
+  const res = await fetch(
+    "https://keen-keeper-swart-five.vercel.app/friends.json",
+  );
   const data = await res.json();
   const friend = data.find((friend) => friend.id === Number(friendId));
   return (
