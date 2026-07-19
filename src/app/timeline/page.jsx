@@ -28,7 +28,7 @@ const Timeline = () => {
       month: "long",
       day: "numeric",
       year: "numeric",
-    });
+    }).toLocaleLowerCase();
     return (
       entry.friendName.toLowerCase().includes(term) ||
       entry.type.toLowerCase().includes(term) ||
