@@ -12,6 +12,10 @@ const Timeline = () => {
   const sortedActivity = [...activity].sort(
     (a, b) => new Date(b.timestamp) - new Date(a.timestamp),
   );
+  const filteredActivity =
+    filter === "all"
+      ? sortedActivity
+      : sortedActivity.filter((entry) => entry.type === filter);
   return (
     <div className="min-h-[70vh] my-10 space-y-5 max-w-277.5 mx-auto">
       <div className="space-y-3">
@@ -22,13 +26,14 @@ const Timeline = () => {
           className="select focus:border-none bg-transparent border-2"
         >
           <option disabled>Filter timeline</option>
-          <option>Call only</option>
-          <option>Text only</option>
-          <option>Video only</option>
+          <option value="call">Call only</option>
+          <option value="text">Text only</option>
+          <option value="video">Video only</option>
+          <option value="all">No filter</option>
         </select>
       </div>
       <div className="flex flex-col justify-between items-center gap-4">
-        {sortedActivity.map((entry, ind) => (
+        {filteredActivity.map((entry, ind) => (
           <div
             key={ind}
             className="p-6 w-full flex justify-start items-center bg-white rounded-xl gap-3"

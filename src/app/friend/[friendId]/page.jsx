@@ -34,7 +34,7 @@ const FriendDetails = async ({ params }) => {
           ))}
         </div>
         <h4 className="text-2xl italic text-[#1f2937]">{`"${friend.bio}"`}</h4>
-        <p className="text-xl text-[#1f2937]">Prefered: {friend.email}</p>
+        <p className="text-md text-[#1f2937]">Prefered: {friend.email}</p>
       </div>
       {/* days since contact*/}
       <div className="bg-white rounded-3xl col-span-2 row-span-2 p-6 flex flex-col gap-4 justify-center items-center">
