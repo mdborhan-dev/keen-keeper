@@ -39,19 +39,41 @@ const Timeline = () => {
     <div className="min-h-[70vh] my-10 space-y-5 max-w-277.5 mx-auto">
       <div className="space-y-3">
         <h2 className="text-5xl font-bold">Timeline</h2>
-        <div className="flex justify-between items-center gap-4">
+        <div className="flex justify-between items-center gap-2.5">
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
             className="select focus:border-none bg-transparent border-2"
           >
-            <option disabled>Filter timeline</option>
+            <option disabled>Filter</option>
             <option value="call">Call only</option>
             <option value="text">Text only</option>
             <option value="video">Video only</option>
             <option value="all">No filter</option>
           </select>
-          <div className="flex justify-center gap-2.5">
+          {/* for mobile */}
+          <label className="input sm:hidden focus-within:border-none bg-transparent border-2">
+            <IoIosSearch />
+            <input
+              type="search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              required
+              placeholder="Search"
+              className="sm:hidden outline-none"
+            />
+          </label>
+          <select
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+            className="select sm:hidden focus:border-none bg-transparent border-2"
+          >
+            <option disabled>Sort By</option>
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+          {/* for pc search and sort */}
+          <div className="hidden sm:flex justify-center items-center gap-2.5">
             {/* search*/}
             <label className="input focus-within:border-none bg-transparent border-2">
               <IoIosSearch />

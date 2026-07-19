@@ -12,9 +12,9 @@ const FriendDetails = async ({ params }) => {
   const data = await res.json();
   const friend = data.find((friend) => friend.id === Number(friendId));
   return (
-    <div className="min-h-[70vh] py-9 sm:py-20 sm:grid flex flex-col sm:grid-cols-9 sm:grid-rows-7 gap-6 max-w-277.5 mx-auto max-sm:mx-4">
+    <div className="min-h-[70vh] py-6 md:py-20 sm:py-9 sm:grid flex flex-col sm:grid-cols-3 md:grid-cols-9 md:grid-rows-7 gap-4 max-w-277.5 mx-auto max-sm:mx-4">
       {/* photo card*/}
-      <div className="row-span-4 col-span-3 bg-white rounded-3xl p-6 flex flex-col justify-between items-center gap-4 text-center">
+      <div className="row-span-4 col-span-2 md:col-span-3 bg-white rounded-3xl p-6 flex flex-col justify-between items-center gap-4 text-center">
         <Image
           src={friend.picture}
           alt={friend.name}
@@ -37,9 +37,9 @@ const FriendDetails = async ({ params }) => {
         </div>
         <h4 className="text-2xl italic text-[#1f2937]">{`"${friend.bio}"`}</h4>
         <p className="text-md text-[#1f2937]">Preferred: {friend.email}</p>
-        {/* the 3 button section for mobile for bigger device that is in the bottom*/}
+        {/* the 3 button section for mobile and tablet for bigger device that is in the bottom*/}
 
-        <div className="bg-transparent sm:hidden rounded-3xl flex gap-4 justify-around items-center">
+        <div className="bg-transparent md:hidden rounded-3xl flex gap-4 justify-around items-center">
           <button className="btn p-6 text-xl bg-white rounded-xl">
             <HiBellSnooze />
           </button>
@@ -63,7 +63,7 @@ const FriendDetails = async ({ params }) => {
         <p className="text-[#64748B] text-xl">Goal (Days)</p>
       </div>
       {/* Next Due*/}
-      <div className="bg-white rounded-3xl col-span-2 row-span-2 p-4 sm:p-6 text-center sm:flex flex-col gap-4 justify-center items-center">
+      <div className="bg-white rounded-3xl col-span-4 md:col-span-2 row-span-2 p-4 sm:p-6 text-center sm:flex flex-col gap-4 justify-center items-center">
         <h2 className="text-4xl font-semibold">{friend.next_due_date}</h2>
         <p className="text-[#64748B] text-xl">Next Due</p>
       </div>
@@ -77,8 +77,8 @@ const FriendDetails = async ({ params }) => {
           Connect every <strong>{friend.goal} days</strong>
         </p>
       </div>
-      {/* 3 more*/}
-      <div className="row-span-3 col-span-3 bg-transparent rounded-3xl hidden sm:grid grid-rows-3 gap-6">
+      {/* 3 more button for big screen only*/}
+      <div className="row-span-3 col-span-3 bg-transparent rounded-3xl hidden md:grid grid-rows-3 gap-6">
         <button className="btn btn-ghost w-full h-full text-xl bg-white rounded-2xl">
           <HiBellSnooze /> Snooze 2 Weeks
         </button>
