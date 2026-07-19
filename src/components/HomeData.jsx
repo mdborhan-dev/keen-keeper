@@ -4,7 +4,10 @@ import Link from "next/link";
 const HomeData = async () => {
   const res = await fetch("http://localhost:3000/friends.json");
   const friends = await res.json();
-  console.log(friends);
+  const onTrack = friends.filter((friend) => friend.status === "on-track");
+  const neeedAttention = friends.filter(
+    (friend) => friend.status === "overdue" || friend.status === "almost due",
+  );
   return (
     <div className="py-6 space-y-8">
       {/* Stats*/}
@@ -14,11 +17,11 @@ const HomeData = async () => {
           <p className="text-[#64748B]">Total Firends</p>
         </div>
         <div className="p-8 rounded-md bg-white flex flex-col gap-3 justify-between items-center text-center w-full">
-          <h2 className="text-5xl font-medium">0</h2>
+          <h2 className="text-5xl font-medium">{onTrack.length}</h2>
           <p className="text-[#64748B]">On Track</p>
         </div>
         <div className="p-8 rounded-md bg-white flex flex-col gap-3 justify-between items-center text-center w-full">
-          <h2 className="text-5xl font-medium">0</h2>
+          <h2 className="text-5xl font-medium">{neeedAttention.length}</h2>
           <p className="text-[#64748B]">Need Attention</p>
         </div>
         <div className="p-8 rounded-md bg-white flex flex-col gap-3 justify-between items-center text-center w-full">

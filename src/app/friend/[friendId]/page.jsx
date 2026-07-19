@@ -1,10 +1,8 @@
+import QuickCheckIn from "@/components/QCheckInButtons/QuickCheckIn";
 import Image from "next/image";
-import { BiPhoneCall } from "react-icons/bi";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { FiArchive } from "react-icons/fi";
 import { HiBellSnooze } from "react-icons/hi2";
-import { IoVideocamOutline } from "react-icons/io5";
-import { MdOutlineMessage } from "react-icons/md";
 
 const FriendDetails = async ({ params }) => {
   const { friendId } = await params;
@@ -60,7 +58,7 @@ const FriendDetails = async ({ params }) => {
           <button className="btn text-xl">Edit</button>
         </div>
         <p className="text-2xl">
-          Connect every <strong>30 days</strong>
+          Connect every <strong>{friend.goal} days</strong>
         </p>
       </div>
       {/* 3 more*/}
@@ -78,20 +76,7 @@ const FriendDetails = async ({ params }) => {
       {/* Quick check in */}
       <div className="row-span-3 col-span-6 bg-white rounded-3xl p-6 flex flex-col gap-4 justify-evenly">
         <h3 className="text-3xl font-medium">Quick Check In</h3>
-        <div className="grid grid-cols-3 gap-4 ">
-          <button className="btn w-full h-full rounded-2xl py-6 flex flex-col gap-2">
-            <BiPhoneCall className="text-5xl" />{" "}
-            <span className="text-2xl">Call</span>
-          </button>
-          <button className="btn w-full h-full rounded-2xl py-6 flex flex-col gap-2">
-            <MdOutlineMessage className="text-5xl" />{" "}
-            <span className="text-2xl">Text</span>
-          </button>
-          <button className="btn w-full h-full rounded-2xl py-6 flex flex-col gap-2">
-            <IoVideocamOutline className="text-5xl" />{" "}
-            <span className="text-2xl">Video</span>
-          </button>
-        </div>
+        <QuickCheckIn friend={friend} />
       </div>
     </div>
   );
