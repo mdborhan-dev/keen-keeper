@@ -3,6 +3,7 @@ import Chart from "@/components/StatsChart/Chart";
 import { TimelineActivityContext } from "@/context/TimelineActiviryContext";
 import { useContext } from "react";
 
+
 const StatsPage = () => {
   const { activity } = useContext(TimelineActivityContext);
   return (

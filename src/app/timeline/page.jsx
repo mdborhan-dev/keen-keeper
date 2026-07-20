@@ -7,6 +7,7 @@ import videoIcon from "../../assets/video.png";
 import Image from "next/image";
 import { IoIosSearch } from "react-icons/io";
 
+
 const Timeline = () => {
   const { activity, setActivity } = useContext(TimelineActivityContext);
   const [filter, setFilter] = useState("all");

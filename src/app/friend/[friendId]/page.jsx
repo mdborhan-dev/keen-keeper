@@ -5,6 +5,12 @@ import { FaRegTrashCan } from "react-icons/fa6";
 import { FiArchive } from "react-icons/fi";
 import { HiBellSnooze } from "react-icons/hi2";
 
+export const metadata = {
+  title: "Keen Keeper friends Details page",
+  description:
+    "Nurture the relationships that matter most through details.",
+};
+
 const FriendDetails = async ({ params }) => {
   const { friendId } = await params;
   const res = await fetch(
